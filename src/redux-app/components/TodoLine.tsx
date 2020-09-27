@@ -11,11 +11,11 @@ export const TodoLine = (props: ITodoLineProps): React.ReactElement => {
             <Grid container item xs={8} justify="flex-start" alignItems="center">{props.text}</Grid>
             <Grid container direction="row" item xs={4} justify="flex-end" alignItems="center">
                 {!props.completed &&
-                    <IconButton color="primary" onClick={props.onCompleteClick}>
+                    <IconButton id={`tickIcon_${props.text}`} color="primary" onClick={props.onCompleteClick}>
                         <DoneIcon />
                     </IconButton>
                 }
-                <IconButton color="secondary" onClick={props.onDelete} >
+                <IconButton id={`deleteIcon_${props.text}`} color="secondary" onClick={props.onDelete} >
                     <DeleteIcon />
                 </IconButton>
             </Grid>

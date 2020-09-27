@@ -12,7 +12,7 @@ export const FilterButton = (props: IFilterButtonProps): React.ReactElement => {
             </Grid>
             <Grid container item xs={10} direction="row" justify="center" alignItems="center">
                 {Object.keys(Filter).map(filter => {
-                    return <StyledButton key={filter} isactive={(props.filterType === filter).toString()} onClick={() => props.onClick(Filter[filter])}>{filter}</StyledButton>
+                    return <StyledButton id={`${filter}_filter`} key={filter} isactive={(props.filterType === filter).toString()} onClick={() => props.onClick(Filter[filter])}>{filter}</StyledButton>
                 })}
             </Grid>
         </Grid>

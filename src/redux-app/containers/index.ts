@@ -1,3 +1,3 @@
-export * from './ConnectedFliterButton';
+export * from './ConnectedFilterButton';
 export * from './ConnectedTodoWrapper';
 export * from './ConnectedAddTodo';

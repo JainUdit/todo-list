@@ -9,7 +9,7 @@ export interface IMarkTodoComplete extends BaseAction<{ id: number }> { }
 export interface IFilterTodo extends BaseAction<{ filter: Filter }> { }
 export interface IRestrictedWord extends BaseAction<{}> { }
 
-let todoId: number = 0;
+let todoId: number = 1;
 export const addTodo: (text: string) => IAddTodo = (text) => ({
     type: ADD_TODO,
     payload: { id: todoId++, text, completed: false }

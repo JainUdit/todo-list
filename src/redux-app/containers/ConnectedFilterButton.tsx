@@ -2,7 +2,7 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { setFilter } from '../actions';
 import { FilterButton } from '../components';
-import { ITodo, ITodoListGlobalState, ITodoListState } from '../interfaces';
+import { ITodo, ITodoListGlobalState } from '../interfaces';
 import { Filter } from '../enums';
 
 interface IStateProps {

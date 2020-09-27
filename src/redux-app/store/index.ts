@@ -6,7 +6,11 @@ import { todoListRootReducer } from '../reducers';
 
 const preloadedState = {
     domain: {
-        todoList: [] as Array<ITodo>,
+        todoList: [{
+            id: 0,
+            text: "Bhopal",
+            completed: false
+        }] as Array<ITodo>,
         filterType: Filter.ALL,
         restrictedWordPopUpOpen: false
     }

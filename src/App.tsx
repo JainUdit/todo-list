@@ -1,26 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
+import { ConnectedAddTodo, TaskBox } from './redux-app';
+import { Grid } from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = (): React.ReactElement => (
+  <Grid container direction="column" justify="center" alignItems="center">
+    <Grid container justify="center" alignItems="center"><h1>Todos</h1></Grid>
+    <Grid container><ConnectedAddTodo /></Grid>
+    <Grid container><TaskBox /></Grid>
+  </Grid>
+)
 
 export default App;

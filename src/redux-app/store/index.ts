@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { Filter } from "../enums";
 import { ITodo } from "../interfaces";
-import { restrictMultipleEntries } from "../middlewares/restrictMultipleEntries";
+import { restrictMultipleEntries } from "../middlewares";
 import { todoListRootReducer } from '../reducers';
 
 const preloadedState = {
@@ -12,7 +12,7 @@ const preloadedState = {
             completed: false
         }] as Array<ITodo>,
         filterType: Filter.ALL,
-        restrictedWordPopUpOpen: false
+        restrictedWordAlertOpen: false
     }
 }
 

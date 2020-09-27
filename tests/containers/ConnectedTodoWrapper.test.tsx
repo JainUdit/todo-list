@@ -13,7 +13,7 @@ class Sut extends React.PureComponent {
             domain: {
                 todoList: [] as Array<ITodo>,
                 filterType: Filter.ALL,
-                restrictedWordPopUpOpen: false
+                restrictedWordAlertOpen: false
             }
         }
 
@@ -56,7 +56,7 @@ describe('<ConnectedTodoWrapper />', () => {
                             completed: false
                         }] as Array<ITodo>,
                         filterType: Filter.ACTIVE,
-                        restrictedWordPopUpOpen: false
+                        restrictedWordAlertOpen: false
                     }
                 }
         
@@ -90,7 +90,7 @@ describe('<ConnectedTodoWrapper />', () => {
                             completed: true
                         }] as Array<ITodo>,
                         filterType: Filter.COMPLETED,
-                        restrictedWordPopUpOpen: false
+                        restrictedWordAlertOpen: false
                     }
                 }
         
@@ -120,7 +120,7 @@ describe('<ConnectedTodoWrapper />', () => {
                     domain: {
                         todoList: [] as Array<ITodo>,
                         filterType: null,
-                        restrictedWordPopUpOpen: false
+                        restrictedWordAlertOpen: false
                     }
                 }
         

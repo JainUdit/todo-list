@@ -13,13 +13,6 @@ const create = () => {
     }
     const next = jest.fn()
 
-    // const action = jest.fn(() => ({
-    //     type: 'ADD_TODO',
-    //     payload: {
-    //         text: 'Bhopal'
-    //     }
-    // }))
-
     const invoke = action => restrictMultipleEntries(store)(next)(action)
 
     return { store, next, invoke }
@@ -28,7 +21,7 @@ const create = () => {
 
 it('passes same text in payload', () => {
     const { next, invoke } = create();
-    const receivedAction = { type: "RESTRICTED_WORD_OPEN_POPUP", payload: {} };
+    const receivedAction = { type: "RESTRICTED_WORD_OPEN_ALERT", payload: {} };
     const passedAction = {
         type: 'ADD_TODO',
         payload: {

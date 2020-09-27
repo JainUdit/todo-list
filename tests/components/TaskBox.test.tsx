@@ -13,7 +13,7 @@ class Sut extends React.PureComponent {
             domain: {
                 todoList: [] as Array<ITodo>,
                 filterType: Filter.ALL,
-                restrictedWordPopUpOpen: false
+                restrictedWordAlertOpen: false
             }
         }
 

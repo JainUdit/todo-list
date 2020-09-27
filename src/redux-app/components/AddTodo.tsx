@@ -9,7 +9,7 @@ export const AddTodo = (props: IAddTodoProps): React.ReactElement => {
     const [task, setTask] = React.useState<string>('');
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
-        props.restrictedWordPopUpOpen && props.onAlertClose();
+        props.restrictedWordAlertOpen && props.onAlertClose();
         setTask(event.target.value);
     }
 
@@ -32,7 +32,7 @@ export const AddTodo = (props: IAddTodoProps): React.ReactElement => {
                     <SendIcon />
                 </IconButton>
             </Grid>
-            {props.restrictedWordPopUpOpen && <Alert severity="error" className="alertBar">This task already exists - try adding a new one!</Alert>}
+            {props.restrictedWordAlertOpen && <Alert severity="error" className="alertBar">This task already exists - try adding a new one!</Alert>}
         </StyledAddTodo>
     )
 }

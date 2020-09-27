@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, ReactWrapper, shallow } from "../setup/test-setup";
+import { mount, ReactWrapper } from "../setup/test-setup";
 import { Filter, FilterButton, IFilterButtonProps, ITodoListState } from '../../src/redux-app';
 
 const todoListState: ITodoListState = {
@@ -9,7 +9,7 @@ const todoListState: ITodoListState = {
         completed: false
     }],
     filterType: Filter.ALL,
-    restrictedWordPopUpOpen: false
+    restrictedWordAlertOpen: false
 }
 
 const mockOnCLick = jest.fn();

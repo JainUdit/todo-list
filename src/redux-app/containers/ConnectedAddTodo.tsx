@@ -1,11 +1,11 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { addTodo, restrictedWordClosePopup } from '../actions';
+import { addTodo, restrictedWordCloseAlert } from '../actions';
 import { AddTodo } from '../components';
 import { ITodoListGlobalState } from '../interfaces';
 
 interface IStateProps {
-    restrictedWordPopUpOpen: boolean;
+    restrictedWordAlertOpen: boolean;
 }
 
 interface IDispatchProps {
@@ -14,12 +14,12 @@ interface IDispatchProps {
 }
 
 const mapStateToProps = (state: ITodoListGlobalState): IStateProps => ({
-    restrictedWordPopUpOpen: state.domain.restrictedWordPopUpOpen
+    restrictedWordAlertOpen: state.domain.restrictedWordAlertOpen
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): IDispatchProps => ({
     onAdd: (taskName: string) => dispatch(addTodo(taskName)),
-    onAlertClose: () => dispatch(restrictedWordClosePopup())
+    onAlertClose: () => dispatch(restrictedWordCloseAlert())
 });
 
 export const ConnectedAddTodo = connect(mapStateToProps, mapDispatchToProps)(AddTodo);

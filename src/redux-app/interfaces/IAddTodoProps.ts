@@ -1,5 +1,8 @@
+/**
+ * This interface defines props for AddTodo component.
+ */
 export interface IAddTodoProps {
-    restrictedWordPopUpOpen: boolean;
+    restrictedWordAlertOpen: boolean;
     onAdd: (taskName: string) => void;
     onAlertClose: () => void;
 }

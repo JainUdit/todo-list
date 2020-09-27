@@ -1,10 +1,17 @@
+import { Reducer } from "redux";
 import { BaseAction } from "../actions";
 import { ITodoListState } from "../interfaces";
 import { deleteTodoReducer } from "./deleteTodoReducer";
 import { markTodoCompleteReducer } from "./markTodoCompleteReducer";
 import { addTodoReducer } from "./addTodoReducer";
-import { ADD_TODO, DELETE_TODO, FILTER_TODO, MARK_TODO_COMPLETE, RESTRICTED_WORD_CLOSE_POPUP, RESTRICTED_WORD_OPEN_POPUP } from "../constants";
-import { Reducer } from "redux";
+import {
+    ADD_TODO,
+    DELETE_TODO,
+    FILTER_TODO,
+    MARK_TODO_COMPLETE,
+    RESTRICTED_WORD_CLOSE_ALERT,
+    RESTRICTED_WORD_OPEN_ALERT
+} from "../constants";
 
 export const todoListRootReducer: Reducer<ITodoListState, BaseAction<any>> = (
     state: ITodoListState = {} as ITodoListState,
@@ -22,10 +29,10 @@ export const todoListRootReducer: Reducer<ITodoListState, BaseAction<any>> = (
         }
         case FILTER_TODO:
             return { ...state, filterType: action.payload.filter };
-        case RESTRICTED_WORD_OPEN_POPUP:
-            return { ...state, restrictedWordPopUpOpen: true };
-        case RESTRICTED_WORD_CLOSE_POPUP:
-            return { ...state, restrictedWordPopUpOpen: false };
+        case RESTRICTED_WORD_OPEN_ALERT:
+            return { ...state, restrictedWordAlertOpen: true };
+        case RESTRICTED_WORD_CLOSE_ALERT:
+            return { ...state, restrictedWordAlertOpen: false };
 
         default:
             return state;

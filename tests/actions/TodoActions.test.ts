@@ -3,8 +3,8 @@ import {
     DELETE_TODO,
     FILTER_TODO,
     MARK_TODO_COMPLETE,
-    RESTRICTED_WORD_CLOSE_POPUP,
-    RESTRICTED_WORD_OPEN_POPUP,
+    RESTRICTED_WORD_CLOSE_ALERT,
+    RESTRICTED_WORD_OPEN_ALERT,
     IAddTodo,
     IDeleteTodo,
     IFilterTodo,
@@ -13,8 +13,8 @@ import {
     addTodo,
     deleteTodo,
     markTodoComplete,
-    restrictedWordClosePopup,
-    restrictedWordOpenPopup,
+    restrictedWordCloseAlert,
+    restrictedWordOpenAlert,
     Filter,
     setFilter
 } from '../../src/redux-app';
@@ -43,13 +43,13 @@ describe('TodoActions', () => {
         expect(result.type).toBe(FILTER_TODO);
     });
 
-    it('should return RESTRICTED_WORD_OPEN_POPUP as type for the action', () => {
-        const result: IRestrictedWord = restrictedWordOpenPopup();
-        expect(result.type).toBe(RESTRICTED_WORD_OPEN_POPUP);
+    it('should return RESTRICTED_WORD_OPEN_ALERT as type for the action', () => {
+        const result: IRestrictedWord = restrictedWordOpenAlert();
+        expect(result.type).toBe(RESTRICTED_WORD_OPEN_ALERT);
     });
 
-    it('should return RESTRICTED_WORD_CLOSE_POPUP as type for the action', () => {
-        const result: IRestrictedWord = restrictedWordClosePopup();
-        expect(result.type).toBe(RESTRICTED_WORD_CLOSE_POPUP);
+    it('should return RESTRICTED_WORD_CLOSE_ALERT as type for the action', () => {
+        const result: IRestrictedWord = restrictedWordCloseAlert();
+        expect(result.type).toBe(RESTRICTED_WORD_CLOSE_ALERT);
     });
 })

@@ -1,4 +1,20 @@
-import { addTodo, BaseAction, deleteTodo, Filter, IAddTodo, IDeleteTodo, IFilterTodo, IMarkTodoComplete, IRestrictedWord, ITodoListState, markTodoComplete, restrictedWordClosePopup, restrictedWordOpenPopup, setFilter, todoListRootReducer } from "../../src/redux-app"
+import {
+    addTodo,
+    BaseAction,
+    deleteTodo,
+    Filter,
+    IAddTodo,
+    IDeleteTodo,
+    IFilterTodo,
+    IMarkTodoComplete,
+    IRestrictedWord,
+    ITodoListState,
+    markTodoComplete,
+    restrictedWordCloseAlert,
+    restrictedWordOpenAlert,
+    setFilter,
+    todoListRootReducer
+} from "../../src/redux-app"
 
 const defaultAction: BaseAction<any> = {
     type: 'XYZ',
@@ -12,7 +28,7 @@ const todoListState: ITodoListState = {
         completed: false
     }],
     filterType: Filter.ALL,
-    restrictedWordPopUpOpen: false
+    restrictedWordAlertOpen: false
 }
 
 describe('todoListRootReducer', () => {
@@ -89,25 +105,25 @@ describe('todoListRootReducer', () => {
         expect(result).toStrictEqual(expectedState);
     });
 
-    it('should return state with modal popUp open if the action is restrictedWordOpenPopup', () => {
+    it('should return state with Alert open if the action is restrictedWordOpenAlert', () => {
         const expectedState: ITodoListState = {
             ...todoListState,
-            restrictedWordPopUpOpen: true
+            restrictedWordAlertOpen: true
         };
 
-        const restrictedWordOpenPopupAction: IRestrictedWord = restrictedWordOpenPopup();
-        const result: ITodoListState = todoListRootReducer(todoListState, restrictedWordOpenPopupAction);
+        const restrictedWordOpenAlertAction: IRestrictedWord = restrictedWordOpenAlert();
+        const result: ITodoListState = todoListRootReducer(todoListState, restrictedWordOpenAlertAction);
         expect(result).toStrictEqual(expectedState);
     });
 
-    it('should return state with modal popUp close if the action is restrictedWordClosePopup', () => {
+    it('should return state with Alert close if the action is restrictedWordCloseAlert', () => {
         const expectedState: ITodoListState = {
             ...todoListState,
-            restrictedWordPopUpOpen: false
+            restrictedWordAlertOpen: false
         };
 
-        const restrictedWordClosePopupAction: IRestrictedWord = restrictedWordClosePopup();
-        const result: ITodoListState = todoListRootReducer(todoListState, restrictedWordClosePopupAction);
+        const restrictedWordCloseAlertAction: IRestrictedWord = restrictedWordCloseAlert();
+        const result: ITodoListState = todoListRootReducer(todoListState, restrictedWordCloseAlertAction);
         expect(result).toStrictEqual(expectedState);
     });
 

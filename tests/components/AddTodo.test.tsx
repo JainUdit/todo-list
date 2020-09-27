@@ -1,13 +1,13 @@
 import React from "react";
+import { act } from "react-dom/test-utils";
 import { mount, ReactWrapper } from "../setup/test-setup";
 import { IAddTodoProps, AddTodo } from '../../src/redux-app';
-import { act } from "react-dom/test-utils";
 
 const mockOnAdd = jest.fn();
 const mockOnAlertClose = jest.fn();
 
 const props: IAddTodoProps = {
-    restrictedWordPopUpOpen: false,
+    restrictedWordAlertOpen: false,
     onAdd: mockOnAdd,
     onAlertClose: mockOnAlertClose
 }
@@ -54,7 +54,7 @@ describe('AddTodo', () => {
 
     it('onAlertClose event handler should be called when pressed Enter button in text field', () => {
         wrapper = mount(
-            <AddTodo {...props} restrictedWordPopUpOpen={true} />
+            <AddTodo {...props} restrictedWordAlertOpen={true} />
         );
         expect(wrapper.find(AddTodo).exists()).toBeTruthy();
 
